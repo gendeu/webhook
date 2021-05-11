@@ -2,16 +2,19 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+
+  <meta name="utm_source" content="facebook">
+  <meta name="utm_medium" content="ads">
+  <meta name="utm_campaign" content="campaign deo">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sample Form</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
 
 </head>
 <style type="text/css">
-    
-
-
-
+ 
 * {
   margin: 0;
   padding: 0
@@ -225,10 +228,13 @@ content: "\f0e0"
   background-color: #673AB7
 }
 
+
 .fit-image {
   width: 100%;
   object-fit: cover
 }
+
+
 </style>
 <body>
 <!-- partial:index.partial.html -->
@@ -238,7 +244,7 @@ content: "\f0e0"
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                 <h2 id="heading">Sign Up Your User Account</h2>
                 <p>Fill all form field to go to next step</p>
-                <form id="msform" >
+                <form action="" method="" id="msform" >
                     <!-- progressbar -->
                     <ul id="progressbar">
                         <li class="active" id="personal"><strong>Personal</strong></li>
@@ -260,8 +266,17 @@ content: "\f0e0"
                                 </div>
                             </div> <label class="fieldlabels">Fullname: *</label> <input type="text" id="fname" name="fname" placeholder="Fullname" required="" /> <label class="fieldlabels">Age: *</label> <input id="age" type="number" name="age" placeholder="Age" /> 
                         </div> 
-                        <input type="submit" id="next1" class="" value="Next" />
-                        <input type="button" name="next" id="next1x" style="display: none;" class="next action-button" value="Next" />
+                        <input type="submit" id="next1" style="width: 100px;
+                        background: #605e64;
+                        font-weight: bold;
+                        color: white;
+                        border: 0 none;
+                        border-radius: 0px;
+                        cursor: pointer;
+                        padding: 10px 5px;
+                        margin: 10px 0px 10px 5px;
+                        float: right" class="" value="Next" />
+                        <input type="button"  id="next1x" style="display: none;" class="next action-button" value="Next" />
                     </fieldset>
                     <fieldset>
                         <div class="form-card">
@@ -275,10 +290,19 @@ content: "\f0e0"
                             </div> <label class="fieldlabels">Job : *</label> <input type="text" name="job" id="job" placeholder="Job" /> <label class="fieldlabels">Salary: *</label> <input type="text" name="salary" id="salary" placeholder="Salary" /> 
                         </div> 
 
-                        <input type="submit" id="next2" class="" value="Next" />
-                        <input type="button" name="next" id="next2x" style="display: none;" class="next action-button" value="Next" />
+                        <input type="submit" id="next2" style="width: 100px;
+                        background: #605e64;
+                        font-weight: bold;
+                        color: white;
+                        border: 0 none;
+                        border-radius: 0px;
+                        cursor: pointer;
+                        padding: 10px 5px;
+                        margin: 10px 0px 10px 5px;
+                        float: right" class="" value="Next" />
+                        <input type="button"  id="next2x" style="display: none;" class="next action-button" value="Next" />
 
-                         <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                         <input type="button"  style="background: #673AB7" class="previous action-button-previous" value="Previous" />
                     </fieldset>
                     <fieldset>
                         <div class="form-card">
@@ -290,12 +314,23 @@ content: "\f0e0"
                                     <h2 class="steps">Step 3 - 4</h2>
                                 </div>
                             </div> <label class="fieldlabels">Email : *</label> <input type="email" id="email1" name="email" placeholder="email" /> <label class="fieldlabels">
+                        </div>
 
-                        <input type="submit" id="next3" class="" value="Next" />
-                        <input type="button" name="next" id="next3x" style="display: none;" class="next action-button" value="Next" />
+                        <input type="submit" id="next3" style="width: 100px;
+                        background: #605e64;
+                        font-weight: bold;
+                        color: white;
+                        border: 0 none;
+                        border-radius: 0px;
+                        cursor: pointer;
+                        padding: 10px 5px;
+                        margin: 10px 0px 10px 5px;
+                        float: right" class="" value="Finish" />
+                        <input type="submit" id="next3x" onclick="webhook();" style="display: none;" class="next action-button" value="Finish" />
 
-                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-            
+                        <input type="button" style="background: #673AB7" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+                    <fieldset>        
                         <div class="form-card">
                             <div class="row">
                                 <div class="col-7">
@@ -315,6 +350,7 @@ content: "\f0e0"
                                 </div>
                             </div>
                         </div>
+                        <input type="button"  style="background: #673AB7" class="previous action-button-previous" value="Previous" />
                     </fieldset>
                 </form>
             </div>
@@ -324,10 +360,10 @@ content: "\f0e0"
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script type="text/javascript">
-      
+    
 $(document).ready(function(){
 
-    $("#fname").keydown(function() {
+    $("#fname").keyup(function() {
         var fname = $("#fname").val();
         var age = $("#age").val();
 
@@ -340,7 +376,7 @@ $(document).ready(function(){
         }
     });
 
-    $("#age").keypress(function() {
+    $("#age").keyup(function() {
         var fname = $("#fname").val();
         var age = $("#age").val();
 
@@ -354,7 +390,7 @@ $(document).ready(function(){
     });
 
 
-    $("#job").keydown(function() {
+    $("#job").keyup(function() {
         var job = $("#job").val();
         var salary = $("#salary").val();
 
@@ -367,7 +403,7 @@ $(document).ready(function(){
         }
     });
 
-    $("#salary").keypress(function() {
+    $("#salary").keyup(function() {
         var salary = $("#salary").val();
         var job = $("#job").val();
 
@@ -380,7 +416,7 @@ $(document).ready(function(){
         }
     });
 
-$("#email1").keypress(function() {
+$("#email1").keyup(function() {
         var email1 = $("#email1").val();
        
 
@@ -473,11 +509,57 @@ return false;
 });
 
 window.onload = function() { 
-        document.getElementById("msform").onsubmit = function() { 
-            // loadXMLDoc('file.xml');
-            return false;
-        };
+    document.getElementById("msform").onsubmit = function() { 
+        // loadXMLDoc('file.xml');
+        return false;
     };
+};
+
+  function webhook() {
+
+    function getMeta(metaName) {
+      const metas = document.getElementsByTagName('meta');
+
+      for (let i = 0; i < metas.length; i++) {
+        if (metas[i].getAttribute('name') === metaName) {
+          return metas[i].getAttribute('content');
+        }
+      }
+
+      return '';
+    }
+
+    // console.log(getMeta('description'));
+    // console.log(getMeta('keywords'));
+
+    var metadata = "utm_source="+getMeta('utm_source')+"&utm_medium="+getMeta('utm_medium')+"&utm_campaign={{campaign.name}}";
+    
+    var utm_source = getMeta('utm_source');
+    var utm_medium = getMeta('utm_medium');
+    var utm_campaign = "{{campaign.name}}";
+
+    var name = $("input[name=fname]").val();
+    var job = $("input[name=job]").val();
+    var salary = $("input[name=salary]").val();
+    var age = $("input[name=age]").val();
+    var email = $("input[name=email]").val();
+    var url = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81";
+
+    // window.open(
+    //   "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email,
+    //   '_blank' 
+    // );
+    
+    var urlHook = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email;
+
+    $.get( urlHook, function() {
+      //alert( "Data Loaded: " + urlHook );
+      window.location.href = "form-submit.html";
+    });
+    // window.location.href = "form-submit.html";
+  }
+  
+  
   </script>
 
 </body>
