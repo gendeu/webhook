@@ -15,53 +15,53 @@
 
 
 <style>
-  .popover {
-max-width: 100%;
-width: auto;
+.popover {
+  max-width: 100%;
+  width: auto;
 }
 
 .ui-autocomplete {
-position: absolute;
-top: 100%;
-left: 0;
-z-index: 1000;
-float: left;
-display: none;
-min-width: 160px;
-padding: 4px 0;
-margin: 0 0 10px 25px;
-list-style: none;
-background-color: #ffffff;
-border-color: #ccc;
-border-color: rgba(0, 0, 0, 0.2);
-border-style: solid;
-border-width: 1px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
--webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
--moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
--webkit-background-clip: padding-box;
--moz-background-clip: padding;
-background-clip: padding-box;
-*border-right-width: 2px;
-*border-bottom-width: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  padding: 4px 0;
+  margin: 0 0 10px 25px;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
 }
 
 .ui-helper-hidden-accessible {
-display: none;
+  display: none;
 }
 
 
 .loading-bar {
- display: flex;
- height: 10px;
- width: 100%;
- max-width: 320px;
- box-shadow: inset 0px 0px 0px 1px #c8c8cd;
- border-radius: 50px;
- overflow: hidden;
+  display: flex;
+  height: 10px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: inset 0px 0px 0px 1px #c8c8cd;
+  border-radius: 50px;
+  overflow: hidden;
 }
 @keyframes progress-animation {
  0% {
@@ -71,12 +71,12 @@ display: none;
    width: 0%;
 }
 }
-.progress-bar {
- display: flex;
- height: 100%;
- width: 0%;
- background: #409be9;
- animation: progress-animation 1s ease-in-out;
+.progress-bar .salary{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  background: #409be9;
+  animation: progress-animation 1s ease-in-out;
 }
 
 </style>
@@ -89,7 +89,7 @@ display: none;
   <h2 class="container-fluid">Salary Calculator</h2>
 </div>
 
-<hr>
+<hr />
 
 <div class="container-fluid" id="calculator">
 
@@ -332,7 +332,7 @@ display: none;
             <option value=10>10 years</option>
           </select>
         </div>
-<br><br>
+            <br /><br />
         <div class="form-group">
           <div class="table" name="form_outputs_table">
             <table class="table" style="width:100%">
@@ -351,8 +351,8 @@ display: none;
             </table>
           </div>
 
-          <br>
-          <hr>
+          <br />
+          <hr />
           
         </div>
         
@@ -366,50 +366,50 @@ display: none;
         <button type="button" href="#" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="focus" data-content="<p>Related Job Reference. Annual / Yearly Average Salary.</p>">?
         </button>
       </label>
-      <br>
-      <br>
+      <br />
+      <br />
       <div class="" id="ref_here">
         
-        <label><input type="hidden"><p id="rel_pos1"></p></label>
+        <label><input type="hidden" /><p id="rel_pos1"></p></label>
         <div class="container"><p id="rel_sal1">₱</p>
           <div class="loading-bar">
-            <div id="p1" class="progress-bar"></div>
+            <div id="p1" class="progress-bar salary"></div>
           </div>
         </div>
         
-        <br>
-        <label><input type="hidden"><p id="rel_pos2"></p></label>
+        <br />
+        <label><input type="hidden" /><p id="rel_pos2"></p></label>
         <div class="container"><p id="rel_sal2">₱</p>
           <div class="loading-bar">
-            <div id="p2" class="progress-bar"></div>
+            <div id="p2" class="progress-bar salary"></div>
           </div>
         </div>
         
-        <br>
-        <label><input type="hidden"><p id="rel_pos3"></p></label>
+        <br />
+        <label><input type="hidden" /><p id="rel_pos3"></p></label>
         <div class="container"><p id="rel_sal3">₱</p>
           <div class="loading-bar">
-            <div id="p3" class="progress-bar"></div>
+            <div id="p3" class="progress-bar salary"></div>
           </div>
         </div>
         
-        <br>
-        <label><input type="hidden"><p id="rel_pos4"></p></label>
+        <br />
+        <label><input type="hidden" /><p id="rel_pos4"></p></label>
         <div class="container"><p id="rel_sal4">₱</p>
           <div class="loading-bar">
-            <div id="p4" class="progress-bar"></div>
+            <div id="p4" class="progress-bar salary"></div>
           </div>
         </div>
         
-        <br>
+        <br />
         
       </div>
       
     </div>
 
-    <br>
+    <br />
 
-    <hr>
+    <hr />
   </div>
 
 </div>
@@ -473,7 +473,7 @@ display: none;
       //alert(bar_size4);
       $("#p4").css('width', bar_size4+'%');
   
-      //$("#ref_here").append('<label><input type="hidden" id="rel_pos">Senior Team Lead</label><div class="container"><p id="rel_sal">₱10,000</p><div class="loading-bar"><div class="progress-bar"></div></div></div><br><label><input type="hidden" name="Team Lead" value=1>Team Lead</label><div class="container">₱10,000<div class="loading-bar"><div class="progress-bar"></div></div></div><br><label>Team Specialist</label><div class="container">₱10,000 <div class="loading-bar"><div class="progress-bar"></div></div></div><br><label><input type="hidden" name="Team Specialist" value=0>None</label><div class="container">₱10,000<div class="loading-bar"><div class="progress-bar"></div></div></div><br>');
+      //$("#ref_here").append('<label><input type="hidden" id="rel_pos">Senior Team Lead</label><div class="container"><p id="rel_sal">₱10,000</p><div class="loading-bar"><div class="progress-bar"></div></div></div><br /><label><input type="hidden" name="Team Lead" value=1>Team Lead</label><div class="container">₱10,000<div class="loading-bar"><div class="progress-bar"></div></div></div><br /><label>Team Specialist</label><div class="container">₱10,000 <div class="loading-bar"><div class="progress-bar"></div></div></div><br /><label><input type="hidden" name="Team Specialist" value=0>None</label><div class="container">₱10,000<div class="loading-bar"><div class="progress-bar"></div></div></div><br />');
       
   
       
