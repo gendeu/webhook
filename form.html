@@ -534,6 +534,10 @@ window.onload = function() {
 
     var metadata = "utm_source="+getMeta('utm_source')+"&utm_medium="+getMeta('utm_medium')+"&utm_campaign={{campaign.name}}";
     
+    var utm_source = getMeta('utm_source');
+    var utm_medium = getMeta('utm_medium');
+    var utm_campaign = "{{campaign.name}}";
+
     var name = $("input[name=fname]").val();
     var job = $("input[name=job]").val();
     var salary = $("input[name=salary]").val();
@@ -541,14 +545,18 @@ window.onload = function() {
     var email = $("input[name=email]").val();
     var url = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81";
 
-    window.open(
-      "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email,
-      '_blank' 
-    );
+    // window.open(
+    //   "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email,
+    //   '_blank' 
+    // );
     
-    // window.location.href = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email;
+    var urlHook = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email;
 
-    window.location.href = "form-submit.html";
+    $.get( urlHook, function() {
+      //alert( "Data Loaded: " + urlHook );
+      window.location.href = "form-submit.html";
+    });
+    // window.location.href = "form-submit.html";
   }
   
   
