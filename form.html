@@ -264,7 +264,7 @@ content: "\f0e0"
                                 <div class="col-5">
                                     <h2 class="steps">Step 1 - 4</h2>
                                 </div>
-                            </div> <label class="fieldlabels">Fullname: *</label> <input type="text" id="fname" name="fname" placeholder="Fullname" required="" /> <label class="fieldlabels">Age: *</label> <input id="age" type="number" name="age" placeholder="Age" /> 
+                            </div> <label class="fieldlabels">Fullname: *</label> <input type="text" id="fname" name="fname" placeholder="Fullname" required="" /> <label class="fieldlabels">Age: *</label> <input id="age" type="text" name="age" placeholder="Age" /> 
                         </div> 
                         <input type="submit" id="next1" style="width: 100px;
                         background: #605e64;
@@ -275,8 +275,9 @@ content: "\f0e0"
                         cursor: pointer;
                         padding: 10px 5px;
                         margin: 10px 0px 10px 5px;
+                        font-size: 11px;
                         float: right" class="" value="Next" />
-                        <input type="button"  id="next1x" style="display: none;" class="next action-button" value="Next" />
+                        <input type="button"  id="next1x" style="display: none; font-size: 11px;" class="next action-button" value="Next" />
                     </fieldset>
                     <fieldset>
                         <div class="form-card">
@@ -299,10 +300,11 @@ content: "\f0e0"
                         cursor: pointer;
                         padding: 10px 5px;
                         margin: 10px 0px 10px 5px;
+                        font-size: 11px;
                         float: right" class="" value="Next" />
-                        <input type="button"  id="next2x" style="display: none;" class="next action-button" value="Next" />
+                        <input type="button"  id="next2x" style="display: none; font-size: 11px;" class="next action-button" value="Next" />
 
-                         <input type="button"  style="background: #673AB7" class="previous action-button-previous" value="Previous" />
+                         <input type="button"  style="background: #673AB7; font-size: 11px;" class="previous action-button-previous" value="Previous" />
                     </fieldset>
                     <fieldset>
                         <div class="form-card">
@@ -324,11 +326,11 @@ content: "\f0e0"
                         border-radius: 0px;
                         cursor: pointer;
                         padding: 10px 5px;
-                        margin: 10px 0px 10px 5px;
+                        margin: 10px 0px 10px 5px; font-size: 11px;
                         float: right" class="" value="Finish" />
-                        <input type="submit" id="next3x" onclick="webhook();" style="display: none;" class="next action-button" value="Finish" />
+                        <input type="submit" id="next3x" onclick="webhook();" style="display: none; font-size: 11px;" class="next action-button" value="Finish" />
 
-                        <input type="button" style="background: #673AB7" class="previous action-button-previous" value="Previous" />
+                        <input type="button" style="background: #673AB7; font-size: 11px;" class="previous action-button-previous" value="Previous" />
                     </fieldset>
                     <fieldset>        
                         <div class="form-card">
@@ -350,7 +352,7 @@ content: "\f0e0"
                                 </div>
                             </div>
                         </div>
-                        <input type="button"  style="background: #673AB7" class="previous action-button-previous" value="Previous" />
+                        <input type="button"  style="background: #673AB7; font-size: 11px;" class="previous action-button-previous" value="Previous" />
                     </fieldset>
                 </form>
             </div>
@@ -358,12 +360,15 @@ content: "\f0e0"
     </div>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type="text/javascript">
-    
-$(document).ready(function(){
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.2/jquery.min.js'></script> -->
 
-    $("#fname").keyup(function() {
+<script type="text/javascript">
+
+(function($) {
+
+$(document).ready(function() {
+
+    $("#fname").on("keyup", function() {
         var fname = $("#fname").val();
         var age = $("#age").val();
 
@@ -376,7 +381,7 @@ $(document).ready(function(){
         }
     });
 
-    $("#age").keyup(function() {
+    $("#age").on("keyup", function() {
         var fname = $("#fname").val();
         var age = $("#age").val();
 
@@ -390,7 +395,7 @@ $(document).ready(function(){
     });
 
 
-    $("#job").keyup(function() {
+    $("#job").on("keyup", function() {
         var job = $("#job").val();
         var salary = $("#salary").val();
 
@@ -403,7 +408,7 @@ $(document).ready(function(){
         }
     });
 
-    $("#salary").keyup(function() {
+    $("#salary").on("keyup", function() {
         var salary = $("#salary").val();
         var job = $("#job").val();
 
@@ -416,7 +421,7 @@ $(document).ready(function(){
         }
     });
 
-$("#email1").keyup(function() {
+$("#email1").on("keyup", function() {
         var email1 = $("#email1").val();
        
 
@@ -440,7 +445,7 @@ var steps = $("fieldset").length;
 
 setProgressBar(current);
 
-$(".next").click(function(){
+$(".next").on("click", function() {
 
 current_fs = $(this).parent();
 next_fs = $(this).parent().next();
@@ -467,7 +472,7 @@ duration: 500
 setProgressBar(++current);
 });
 
-$(".previous").click(function(){
+$(".previous").on("click", function() {
 
 current_fs = $(this).parent();
 previous_fs = $(this).parent().prev();
@@ -502,7 +507,7 @@ $(".progress-bar")
 .css("width",percent+"%")
 }
 
-$(".submit").click(function(){
+$(".submit").on("click", function() {
 return false;
 })
 
@@ -515,7 +520,7 @@ window.onload = function() {
     };
 };
 
-  function webhook() {
+$("#next3x").on("click", function() {
 
     function getMeta(metaName) {
       const metas = document.getElementsByTagName('meta');
@@ -543,7 +548,7 @@ window.onload = function() {
     var salary = $("input[name=salary]").val();
     var age = $("input[name=age]").val();
     var email = $("input[name=email]").val();
-    var url = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81";
+    var url = "cveez.com";
 
     // window.open(
     //   "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email,
@@ -554,12 +559,14 @@ window.onload = function() {
 
     $.get( urlHook, function() {
       //alert( "Data Loaded: " + urlHook );
-      window.location.href = "form-submit.html";
+      window.location.href = "https://cveez.com/thank-you/";
     });
     // window.location.href = "form-submit.html";
-  }
+    
+});
   
-  
+})(jQuery);
+
   </script>
 
 </body>
