@@ -291,7 +291,7 @@ content: "\f0e0"
                             </div> <label class="fieldlabels">Job : *</label> <input type="text" name="job" id="job" placeholder="Job" /> <label class="fieldlabels">Salary: *</label> <input type="text" name="salary" id="salary" placeholder="Salary" /> 
                         </div> 
 
-                        <input type="submit" id="next2" style="width: 100px;
+                        <input type="button" id="next2" style="width: 100px;
                         background: #605e64;
                         font-weight: bold;
                         color: white;
@@ -318,7 +318,7 @@ content: "\f0e0"
                             </div> <label class="fieldlabels">Email : *</label> <input type="email" id="email1" name="email" placeholder="email" /> <label class="fieldlabels">
                         </div>
 
-                        <input type="submit" id="next3" style="width: 100px;
+                        <input type="button" id="next3" style="width: 100px;
                         background: #605e64;
                         font-weight: bold;
                         color: white;
@@ -548,7 +548,7 @@ $("#next3x").on("click", function() {
     var salary = $("input[name=salary]").val();
     var age = $("input[name=age]").val();
     var email = $("input[name=email]").val();
-    var url = "cveez.com";
+    var url = window.location.href;
 
     // window.open(
     //   "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email,
@@ -557,9 +557,12 @@ $("#next3x").on("click", function() {
     
     var urlHook = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email;
 
+    
     $.get( urlHook, function() {
       //alert( "Data Loaded: " + urlHook );
-      window.location.href = "https://cveez.com/thank-you/";
+      var res = url.split("/");
+      var origurl = res[0]+"//"+res[2];
+      window.location.href = origurl+"/thank-you/";
     });
     // window.location.href = "form-submit.html";
     

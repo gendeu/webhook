@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.js"></script>
 
 
 <style>
@@ -691,4 +692,31 @@
       return parts.join(".");
   }
   
+//   function loadJSON(path, success, error) {
+//   var xhr = new XMLHttpRequest();
+//   xhr.onreadystatechange = function() {
+//     if (xhr.readyState === XMLHttpRequest.DONE) {
+//       if (xhr.status === 200) {
+//         if (success)
+//           success(JSON.parse(xhr.responseText));
+//       } else {
+//         if (error)
+//           error(xhr);
+//       }
+//     }
+//   };
+//   xhr.open("GET", path, true);
+//   xhr.send();
+// }
+
+// loadJSON('https://job-search4.p.rapidapi.com/indeed/search',
+//   function(data) {
+//     console.log(data)
+//   },
+//   function(xhr) {
+//     console.error(xhr);
+//   }
+// );
+
+
   </script>
