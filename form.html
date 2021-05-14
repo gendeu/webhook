@@ -31,7 +31,8 @@ p {
 #heading {
   text-transform: uppercase;
   color: #673AB7;
-  font-weight: normal
+  font-weight: normal;
+   font-family: 'BW MODELICA';
 }
 
 #msform {
@@ -127,11 +128,12 @@ p {
 }
 
 .fs-title {
-  font-size: 25px;
+  font-size: 20px;
   color: #673AB7;
   margin-bottom: 15px;
   font-weight: normal;
-  text-align: left
+  text-align: left;
+  font-family: 'BW MODELICA';
 }
 
 .purple-text {
@@ -140,12 +142,15 @@ p {
 }
 
 .steps {
-  font-size: 25px;
-  color: gray;
-  margin-bottom: 10px;
-  font-weight: normal;
-  text-align: right
+    font-size: 20px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right;
+    
+    font-family: 'BW MODELICA';
 }
+
 
 .fieldlabels {
   color: gray;
@@ -234,13 +239,47 @@ content: "\f0e0"
   object-fit: cover
 }
 
+input[type=checkbox]:checked {
+  color: #f00;
+  font-style: normal;
+} 
+
+
+@media only screen and (max-width: 1200px) {
+ .col-xl-5 {
+    -ms-flex: 0% !important;
+    flex: 0%!important;
+     max-width: 0%!important; 
+}
+}
+
+
+
+@media only screen and (max-width: 992px) {
+.col-lg-6 {
+    -ms-flex: 0%!important;
+   flex: 0%!important; 
+   max-width: 100%!important; 
+}
+}
+
+@media only screen and (max-width: 768px) {
+.col-lg-10{
+   -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+}
+
+
+
 
 </style>
 <body>
 <!-- partial:index.partial.html -->
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+        <div class="col-11 col-sm-10 col-md-10  text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                 <h2 id="heading">Sign Up Your User Account</h2>
                 <p>Fill all form field to go to next step</p>
@@ -264,7 +303,8 @@ content: "\f0e0"
                                 <div class="col-5">
                                     <h2 class="steps">Step 1 - 4</h2>
                                 </div>
-                            </div> <label class="fieldlabels">Fullname: *</label> <input type="text" id="fname" name="fname" placeholder="Fullname" required="" /> <label class="fieldlabels">Age: *</label> <input id="age" type="text" name="age" placeholder="Age" /> 
+                            </div> <label class="fieldlabels">Fullname: *</label> <input type="text" id="fname" name="fname" placeholder="Fullname" required="" /> <label class="fieldlabels">Mobile: *</label> <input id="num" type="text" name="num" placeholder="Mobile number" /> 
+                            <label class="fieldlabels">Email : *</label> <input type="email" id="email1" name="email" placeholder="Email address" /> 
                         </div> 
                         <input type="submit" id="next1" style="width: 100px;
                         background: #605e64;
@@ -288,10 +328,19 @@ content: "\f0e0"
                                 <div class="col-5">
                                     <h2 class="steps">Step 2 - 4</h2>
                                 </div>
-                            </div> <label class="fieldlabels">Job : *</label> <input type="text" name="job" id="job" placeholder="Job" /> <label class="fieldlabels">Salary: *</label> <input type="text" name="salary" id="salary" placeholder="Salary" /> 
+                            </div> <label class="fieldlabels">Job Field : *</label> <input type="text" name="job" id="job" placeholder="Job" /> <label class="fieldlabels">Years: *</label> <input type="text" name="years" id="years" placeholder="Years" /> 
+                            <label class="fieldlabels">Country: *</label> <input type="text" name="country" id="country" placeholder="Country" /> 
+                            <label class="fieldlabels"> I am currently: * </label>
+                            
+                            <select name="jobStatus" id="jobStatus"  style="background-color: #ECEFF1">
+                              <option selected="selected" value="">Choose </option>
+                              <option  value="Working">Working</option>
+                              <option value="Not  Working">Not  Working</option>
+                            </select>
+
                         </div> 
 
-                        <input type="button" id="next2" style="width: 100px;
+                        <input type="submit" id="next2" style="width: 100px;
                         background: #605e64;
                         font-weight: bold;
                         color: white;
@@ -315,10 +364,63 @@ content: "\f0e0"
                                 <div class="col-5">
                                     <h2 class="steps">Step 3 - 4</h2>
                                 </div>
-                            </div> <label class="fieldlabels">Email : *</label> <input type="email" id="email1" name="email" placeholder="email" /> <label class="fieldlabels">
-                        </div>
+                            </div> 
+                  
+<label class="fieldlabels">Looking For : * </label>
+<select name="looking"  id="looking" style="background-color: #ECEFF1" required="">
+  <option value="">Choose </option>
+  <option value="Rewrite CV">Rewrite CV</option>
+  <option value="Write from Scratch">Write from Scratch</option>
 
-                        <input type="button" id="next3" style="width: 100px;
+</select>
+
+
+
+<label class="fieldlabels" style="margin-top: 20px"> Interested In : * </label>
+</div>
+
+<div class="row">
+
+  <div class="col-12" style="margin-top: -15">
+  <input type="checkbox" id="cl" name="interested" value="Cover Letter" style="width: 5%;
+    height: 20px;
+    padding: 0px;
+    margin-top: 18px;
+    margin-left: -324px;
+
+" required="">
+ <label for="vehicle1"> Cover letter </label><br>
+</div>
+ <div class="col-12" style="margin-top: -20px">
+   <input type="checkbox" id="li" name="interested" value="ILinkedln" style="width: 5%;
+    height: 20px;
+    padding: 0px;
+    margin-top: 20px;
+    margin-left: -310px;
+
+" required="">
+
+
+ <label for="vehicle1" style="margin-top: -20px">  ILinkedln Page </label><br>
+</div>
+
+ <div class="col-12" style="margin-top: -20px">
+<input type="checkbox" id="ip" name="interested" value="Iterview Preparation" style="width: 5%;
+    height: 20px;
+    padding: 0px;
+    margin-left: ;
+    margin-top: 20px;
+  margin-left: -275px;
+
+" required="">
+
+
+
+
+ <label for="vehicle1" style="margin-top: -20px">   Interview Preparation  </label><br>
+</div>
+</div>
+                        <input type="submit" id="next3" style="width: 100px;
                         background: #605e64;
                         font-weight: bold;
                         color: white;
@@ -340,8 +442,14 @@ content: "\f0e0"
                                 </div>
                                 <div class="col-5">
                                     <h2 class="steps">Step 4 - 4</h2>
+
+      
                                 </div>
-                            </div> <br><br>
+                            </div>
+
+
+
+                            <br><br>
                             <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
                             <div class="row justify-content-center">
                                 <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
@@ -360,7 +468,7 @@ content: "\f0e0"
     </div>
 </div>
 <!-- partial -->
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.2/jquery.min.js'></script> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.2/jquery.min.js'></script>
 
 <script type="text/javascript">
 
@@ -370,9 +478,10 @@ $(document).ready(function() {
 
     $("#fname").on("keyup", function() {
         var fname = $("#fname").val();
-        var age = $("#age").val();
+        var email1 = $("#email1").val();
+         var num = $("#num").val();
 
-        if (fname !== '' && age !== '') {
+        if (fname !== ''  &&  email1 !== '' &&  num !== '' ) {
             $("#next1x").show();
             $("#next1").hide();
         }else{
@@ -381,11 +490,26 @@ $(document).ready(function() {
         }
     });
 
-    $("#age").on("keyup", function() {
+    $("#num").on("keyup", function() {
         var fname = $("#fname").val();
-        var age = $("#age").val();
+        var num = $("#num").val();
+          var email1 = $("#email1").val();
 
-        if (fname !== '' && age !== '') {
+        if (fname !== '' && num !== '' &&  email1 !== '') {
+            $("#next1x").show();
+            $("#next1").hide();
+        }else{
+            $("#next1").show();
+            $("#next1x").hide();
+        }
+    });
+
+    $("#email1").on("keyup", function() {
+        var fname = $("#fname").val();
+        var num = $("#num").val();
+          var email1 = $("#email1").val();
+
+        if (fname !== '' && num !== '' &&  email1 !== '') {
             $("#next1x").show();
             $("#next1").hide();
         }else{
@@ -397,9 +521,11 @@ $(document).ready(function() {
 
     $("#job").on("keyup", function() {
         var job = $("#job").val();
-        var salary = $("#salary").val();
+        var years = $("#years").val();
+        var country = $("#country").val();
+        var status = $("#jobStatus").val();
 
-        if (job !== '' && salary !== '') {
+        if (job !== '' && years !== ''  && country !== '' && status !== '') {
             $("#next2x").show();
             $("#next2").hide();
         }else{
@@ -408,11 +534,13 @@ $(document).ready(function() {
         }
     });
 
-    $("#salary").on("keyup", function() {
-        var salary = $("#salary").val();
+    $("#years").on("keyup", function() {
         var job = $("#job").val();
+        var years = $("#years").val();
+        var country = $("#country").val();
+        var status = $("#jobStatus").val();
 
-        if (salary !== '' && job !== '') {
+        if (job !== '' && years !== ''  && country !== '' && status !== '') {
             $("#next2x").show();
             $("#next2").hide();
         }else{
@@ -421,11 +549,49 @@ $(document).ready(function() {
         }
     });
 
-$("#email1").on("keyup", function() {
-        var email1 = $("#email1").val();
-       
 
-        if (email1 !== '') {
+      $("#country").on("keyup", function() {
+        var job = $("#job").val();
+        var years = $("#years").val();
+        var country = $("#country").val();
+        var status = $("#jobStatus").val();
+
+        if (job !== '' && years !== ''  && country !== '' && status !== '') {
+            $("#next2x").show();
+            $("#next2").hide();
+        }else{
+            $("#next2").show();
+            $("#next2x").hide();
+        }
+    });
+    
+    $("#jobStatus").on("change", function() {
+        var fname = $("#fname").val();
+        var num = $("#num").val();
+        var email1 = $("#email1").val();
+        var country = $("#country").val();
+
+        if (fname !== '' && num !== '' &&  email1 !== ''&& country !== '') {
+            $("#next2x").show();
+            $("#next2").hide();
+        }else{
+            $("#next2").show();
+            $("#next2x").hide();
+        }
+    });
+
+    
+  $("#looking").on("change", function() {
+        var looking = this.value;
+        var arr = [];
+      
+        $.each($("input[name='interested']:checked"), function(){
+            arr.push($(this).val());
+        });
+
+        var interest = arr.join(", ");
+        
+        if (looking !== '' && interest !== '') {
             $("#next3x").show();
             $("#next3").hide();
         }else{
@@ -434,6 +600,63 @@ $("#email1").on("keyup", function() {
         }
     });
 
+     
+    $("#cl").on("click", function() {
+        var looking = $("#looking").val();
+        var arr = [];
+      
+        $.each($("input[name='interested']:checked"), function(){
+            arr.push($(this).val());
+        });
+
+        var interest = arr.join(", ");
+        
+        if (looking !== '' && interest !== '') {
+            $("#next3x").show();
+            $("#next3").hide();
+        }else{
+            $("#next3").show();
+            $("#next3x").hide();
+        }
+    });
+   
+    $("#li").on("click", function() {
+        var looking = $("#looking").val();
+        var arr = [];
+      
+        $.each($("input[name='interested']:checked"), function(){
+            arr.push($(this).val());
+        });
+
+        var interest = arr.join(", ");
+        
+        if (looking !== '' && interest !== '') {
+            $("#next3x").show();
+            $("#next3").hide();
+        }else{
+            $("#next3").show();
+            $("#next3x").hide();
+        }
+    });
+   
+    $("#ip").on("click", function() {
+        var looking = $("#looking").val();
+        var arr = [];
+      
+        $.each($("input[name='interested']:checked"), function(){
+            arr.push($(this).val());
+        });
+
+        var interest = arr.join(", ");
+        
+        if (looking !== '' && interest !== '') {
+            $("#next3x").show();
+            $("#next3").hide();
+        }else{
+            $("#next3").show();
+            $("#next3x").hide();
+        }
+    });
 
 
 
@@ -548,6 +771,19 @@ $("#next3x").on("click", function() {
     var salary = $("input[name=salary]").val();
     var age = $("input[name=age]").val();
     var email = $("input[name=email]").val();
+
+    var looking = $("input[name=looking]").val();
+    // var interested  = $("input[name=interested]").val();
+    var country = $("input[name=country]").val();
+    var jobStatus  = $("input[name=jobStatus ]").val();
+
+    var arrn = [];
+    $.each($("input[name='interested']:checked"), function(){
+        arrn.push($(this).val());
+    });
+
+    var interestn = arrn.join(", ");
+
     var url = window.location.href;
 
     // window.open(
@@ -555,14 +791,19 @@ $("#next3x").on("click", function() {
     //   '_blank' 
     // );
     
-    var urlHook = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email;
+    var urlHook = "https://hook.integromat.com/w99jf3unhykedeq4tdgrmolcxfoq5d81?"+url+"&"+metadata+"&name="+name+"&job="+job+"&salary="+salary+"&age="+age+"&email="+email+"&lookingfor="+looking+"&interestedin="+interestn+"&country="+country+"&jobStatus="+jobStatus;
 
+    var newstr = url;
+    var newres = newstr.split("/");
+    var newurl = newres[0]+"//"+newres[2];
     
     $.get( urlHook, function() {
+
+      var str = url;
+      var res = str.split("/");
+      console.log(res[0]+"//"+res[2])
       //alert( "Data Loaded: " + urlHook );
-      var res = url.split("/");
-      var origurl = res[0]+"//"+res[2];
-      window.location.href = origurl+"/thank-you/";
+      window.location.href = newurl+"/thank-you/";
     });
     // window.location.href = "form-submit.html";
     
